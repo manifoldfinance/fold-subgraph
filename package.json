@@ -1,6 +1,6 @@
 {
-  "name": "fold",
-  "license": "UNLICENSED",
+  "name": "@manifoldfinnace/fold-subgraph",
+  "license": "Apache-2.0",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
