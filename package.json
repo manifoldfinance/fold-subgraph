@@ -1,16 +1,40 @@
 {
-  "name": "@manifoldfinnace/fold-subgraph",
-  "license": "Apache-2.0",
+  "name": "manifold-subgraph",
+  "version": "0.3.0",
+  "license": "MIT",
+  "description": "Manifold Finance FOLD Token Subgraph",
   "scripts": {
     "codegen": "graph codegen",
+    "compile": "graph codegen && graph build",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ fold",
-    "create-local": "graph create --node http://localhost:8020/ fold",
-    "remove-local": "graph remove --node http://localhost:8020/ fold",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 fold"
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ manifold-finance",
+    "create-local": "graph create --node http://localhost:8020/ manifold-finance",
+    "remove-local": "graph remove --node http://localhost:8020/ manifold-finance",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 manifold-finance",
+    "auth": "graph auth  --studio $STUDIO_TOKEN"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.22.2",
-    "@graphprotocol/graph-ts": "0.22.1"
+    "@graphprotocol/graph-cli": "0.29.0",
+    "@graphprotocol/graph-ts": "0.26.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldx/fold-subgraph.git"
+  },
+  "keywords": [
+    "subgraph",
+    "ethereum",
+    "erc20",
+    "manifold finance",
+    "fold token"
+  ],
+  "author": "Manifold Finance, Inc",
+  "bugs": {
+    "url": "https://github.com/manifoldx/fold-subgraph/issues"
+  },
+  "homepage": "https://github.com/manifoldx/fold-subgraph#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "prettier": "^2.6.2"
   }
 }
