@@ -4,6 +4,13 @@
 
 [FOLD ERC20 Contract](https://etherscan.io/token/0xd084944d3c05cd115c09d072b9f44ba3e0e45921#readContract)
 
+TEMPORARY QUERY URL
+https://api.studio.thegraph.com/query/3019/manifold-finance/v0.0.1
+
+DEPLOYMENT ID
+QmTgadudUfmVEg5BT3nMifwkGyzKp25UdvWVFJhAnqrNyn
+
+
 **[FOLD Subgraph via The Graph Studio](https://thegraph.com/studio/subgraph/manifold-finance/)**
 
 - [Manifold Finance $FOLD Subgraph](#manifold-finance--fold-subgraph)
