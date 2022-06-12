@@ -4,7 +4,7 @@ repository: https://github.com/manifoldfinance/fold-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
-  - name: FOLD ERC20
+  - name: FOLD
     kind: ethereum/contract
     network: mainnet
     source:
