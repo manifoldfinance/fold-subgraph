@@ -1,6 +1,6 @@
 {
   "name": "manifold-subgraph",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Manifold Finance FOLD Token Subgraph",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "graph build",
     "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ manifold-finance",
     "deploy-prod": "dotenv -- cross-var \"graph deploy %SLUG% --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token %ACCESS_TOKEN%\"",
-    "launch": "npm run prepare:mainnet && npm run codegen-env && npm run build && npm run deploy"
+    "launch": "npm run prepare:mainnet && npm run codegen-env && npm run build && npm run deploy",
     "codegen-env": "graph -r dotenv/config codegen --output-dir src/types/",
     "create-local": "graph create --node http://localhost:8020/ manifold-finance",
     "remove-local": "graph remove --node http://localhost:8020/ manifold-finance",
