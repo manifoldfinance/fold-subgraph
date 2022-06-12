@@ -62,9 +62,9 @@ export class Transfer__Params {
   }
 }
 
-export class Contract extends ethereum.SmartContract {
-  static bind(address: Address): Contract {
-    return new Contract('Contract', address);
+export class Token extends ethereum.SmartContract {
+  static bind(address: Address): Token {
+    return new Token('Token', address);
   }
 
   DOMAIN_SEPARATOR(): Bytes {

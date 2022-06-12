@@ -1,0 +1,41 @@
+"""
+Asset stores all high level variables for a Token asset
+"""
+type Asset @entity {
+    "Token address"
+    id: ID!
+    "Name of the Token"
+    name: String!
+    "Token symbol"
+    symbol: String!
+    "Token decimals"
+    decimals: Int!
+}
+
+"""
+User is a single ethereum address and related information
+"""
+type User @entity {
+    "User wallet address"
+    id: ID!
+    "Token balance of the user"
+    balance: BigDecimal!
+    "Array of approvals for user"
+    approvals: [UserApproval!]! @derivedFrom(field: "owner")
+}
+
+"""
+Approvals of tokens and related information
+"""
+type UserApproval @entity {
+  "Owner address + Spender address"
+  id: ID!
+  "Number of approvals"
+  count: BigInt!
+  "Relation to user"
+  owner: User!
+  "Spender of approval"
+  spender: Bytes!
+  "Value of approvals"
+  value: BigDecimal!
+}
