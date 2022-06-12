@@ -1,0 +1,29 @@
+specVersion: 0.0.4
+description: ERC-20 subgraph with event handlers & entities for FOLD
+repository: https://github.com/manifoldfinance/fold-subgraph
+schema:
+  file: schema.graphql
+dataSources:
+  - name: FOLD
+    kind: ethereum/contract
+    network: mainnet
+    source:
+      address: "0xd084944d3c05CD115C09d072B9F44bA3E0E45921"
+      abi: Token
+      startBlock: 12517178
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: FOLD/FOLD.wasm
+      entities:
+        - User
+        - Asset
+      abis:
+        - name: Token
+          file: FOLD/abis/token.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
