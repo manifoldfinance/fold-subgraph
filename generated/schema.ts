@@ -8,182 +8,182 @@ import {
   store,
   Bytes,
   BigInt,
-  BigDecimal
-} from "@graphprotocol/graph-ts";
+  BigDecimal,
+} from '@graphprotocol/graph-ts';
 
 export class Asset extends Entity {
   constructor(id: string) {
     super();
-    this.set("id", Value.fromString(id));
+    this.set('id', Value.fromString(id));
   }
 
   save(): void {
-    let id = this.get("id");
-    assert(id != null, "Cannot save Asset entity without an ID");
+    let id = this.get('id');
+    assert(id != null, 'Cannot save Asset entity without an ID');
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Asset must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type Asset must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
-      store.set("Asset", id.toString(), this);
+      store.set('Asset', id.toString(), this);
     }
   }
 
   static load(id: string): Asset | null {
-    return changetype<Asset | null>(store.get("Asset", id));
+    return changetype<Asset | null>(store.get('Asset', id));
   }
 
   get id(): string {
-    let value = this.get("id");
+    let value = this.get('id');
     return value!.toString();
   }
 
   set id(value: string) {
-    this.set("id", Value.fromString(value));
+    this.set('id', Value.fromString(value));
   }
 
   get name(): string {
-    let value = this.get("name");
+    let value = this.get('name');
     return value!.toString();
   }
 
   set name(value: string) {
-    this.set("name", Value.fromString(value));
+    this.set('name', Value.fromString(value));
   }
 
   get symbol(): string {
-    let value = this.get("symbol");
+    let value = this.get('symbol');
     return value!.toString();
   }
 
   set symbol(value: string) {
-    this.set("symbol", Value.fromString(value));
+    this.set('symbol', Value.fromString(value));
   }
 
   get decimals(): i32 {
-    let value = this.get("decimals");
+    let value = this.get('decimals');
     return value!.toI32();
   }
 
   set decimals(value: i32) {
-    this.set("decimals", Value.fromI32(value));
+    this.set('decimals', Value.fromI32(value));
   }
 }
 
 export class User extends Entity {
   constructor(id: string) {
     super();
-    this.set("id", Value.fromString(id));
+    this.set('id', Value.fromString(id));
   }
 
   save(): void {
-    let id = this.get("id");
-    assert(id != null, "Cannot save User entity without an ID");
+    let id = this.get('id');
+    assert(id != null, 'Cannot save User entity without an ID');
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type User must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type User must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
-      store.set("User", id.toString(), this);
+      store.set('User', id.toString(), this);
     }
   }
 
   static load(id: string): User | null {
-    return changetype<User | null>(store.get("User", id));
+    return changetype<User | null>(store.get('User', id));
   }
 
   get id(): string {
-    let value = this.get("id");
+    let value = this.get('id');
     return value!.toString();
   }
 
   set id(value: string) {
-    this.set("id", Value.fromString(value));
+    this.set('id', Value.fromString(value));
   }
 
   get balance(): BigDecimal {
-    let value = this.get("balance");
+    let value = this.get('balance');
     return value!.toBigDecimal();
   }
 
   set balance(value: BigDecimal) {
-    this.set("balance", Value.fromBigDecimal(value));
+    this.set('balance', Value.fromBigDecimal(value));
   }
 
   get approvals(): Array<string> {
-    let value = this.get("approvals");
+    let value = this.get('approvals');
     return value!.toStringArray();
   }
 
   set approvals(value: Array<string>) {
-    this.set("approvals", Value.fromStringArray(value));
+    this.set('approvals', Value.fromStringArray(value));
   }
 }
 
 export class UserApproval extends Entity {
   constructor(id: string) {
     super();
-    this.set("id", Value.fromString(id));
+    this.set('id', Value.fromString(id));
   }
 
   save(): void {
-    let id = this.get("id");
-    assert(id != null, "Cannot save UserApproval entity without an ID");
+    let id = this.get('id');
+    assert(id != null, 'Cannot save UserApproval entity without an ID');
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type UserApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type UserApproval must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
-      store.set("UserApproval", id.toString(), this);
+      store.set('UserApproval', id.toString(), this);
     }
   }
 
   static load(id: string): UserApproval | null {
-    return changetype<UserApproval | null>(store.get("UserApproval", id));
+    return changetype<UserApproval | null>(store.get('UserApproval', id));
   }
 
   get id(): string {
-    let value = this.get("id");
+    let value = this.get('id');
     return value!.toString();
   }
 
   set id(value: string) {
-    this.set("id", Value.fromString(value));
+    this.set('id', Value.fromString(value));
   }
 
   get count(): BigInt {
-    let value = this.get("count");
+    let value = this.get('count');
     return value!.toBigInt();
   }
 
   set count(value: BigInt) {
-    this.set("count", Value.fromBigInt(value));
+    this.set('count', Value.fromBigInt(value));
   }
 
   get owner(): string {
-    let value = this.get("owner");
+    let value = this.get('owner');
     return value!.toString();
   }
 
   set owner(value: string) {
-    this.set("owner", Value.fromString(value));
+    this.set('owner', Value.fromString(value));
   }
 
   get spender(): Bytes {
-    let value = this.get("spender");
+    let value = this.get('spender');
     return value!.toBytes();
   }
 
   set spender(value: Bytes) {
-    this.set("spender", Value.fromBytes(value));
+    this.set('spender', Value.fromBytes(value));
   }
 
   get value(): BigDecimal {
-    let value = this.get("value");
+    let value = this.get('value');
     return value!.toBigDecimal();
   }
 
   set value(value: BigDecimal) {
-    this.set("value", Value.fromBigDecimal(value));
+    this.set('value', Value.fromBigDecimal(value));
   }
 }
